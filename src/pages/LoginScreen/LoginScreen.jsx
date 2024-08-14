@@ -1,7 +1,14 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
 
+
+import { useNavigation } from '@react-navigation/native';
+
 export default function LoginScreen() {
+
+
+  const navigation = useNavigation();
+  
   return (
     <KeyboardAvoidingView >
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled" style={styles.container}>
@@ -26,9 +33,10 @@ export default function LoginScreen() {
             secureTextEntry={true}
           />
 
-          <TouchableOpacity style={styles.forgotPasswordContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
             <Text style={styles.forgotPasswordText}>Recuperar Senha</Text>
           </TouchableOpacity>
+
 
           <TouchableOpacity style={styles.loginButton}>
             <Text style={styles.loginButtonText}>Entrar</Text>
@@ -44,7 +52,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffff',
   },
   logoContainer: {
-    height: 250,  // Define uma altura fixa
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#0F0147',
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: '10%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: '20%',
+    marginBottom: 42,
   },
   title: {
     fontSize: 28,
