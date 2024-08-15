@@ -12,12 +12,20 @@ export default function ConfirmationModal({ visible, onClose, title, message, ic
     >
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
+
           {icon && <Image source={icon} style={styles.successIcon} />}
+
+
           {title && <Text style={styles.modalTitle}>{title}</Text>}
+
+
           {message && <Text style={styles.modalMessage}>{message}</Text>}
+
+
           <TouchableOpacity style={styles.okButton} onPress={onClose}>
             <Text style={styles.okButtonText}>OK</Text>
           </TouchableOpacity>
+          
         </View>
       </View>
     </Modal>

@@ -6,12 +6,9 @@ const InitialScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <KeyboardAvoidingView 
-      style={styles.container} 
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0}
-    >
+    <KeyboardAvoidingView style={styles.container}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} keyboardShouldPersistTaps="handled" style={styles.container}>
+        
         <View style={styles.imageBox}>
           <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode='contain' />
         </View>
@@ -41,9 +38,10 @@ const styles = StyleSheet.create({
   },
 
   imageBox: {
-    flex: 1,
+    flex: 10,
     justifyContent: 'center',
     alignItems: 'center',
+
   },
 
   logo: {
@@ -52,6 +50,7 @@ const styles = StyleSheet.create({
   },
 
   containerPaiBrancoBemVindo: {
+    flex: 1,
     backgroundColor: '#FFFFFF',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,

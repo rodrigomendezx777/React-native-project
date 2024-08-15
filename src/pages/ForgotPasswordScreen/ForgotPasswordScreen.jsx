@@ -12,8 +12,7 @@ export default function ForgotPasswordScreen() {
   };
 
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+    <KeyboardAvoidingView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
         <View style={styles.container}>
           <View style={styles.logoContainer}>
@@ -40,7 +39,7 @@ export default function ForgotPasswordScreen() {
         </View>
       </ScrollView>
 
-      {/* Use o componente ConfirmationModal */}
+      {/* Use o componente ConfirmationModal, informações setadas no componente */}
       <ConfirmationModal
         visible={modalVisible}
         onClose={() => setModalVisible(false)}
@@ -48,19 +47,23 @@ export default function ForgotPasswordScreen() {
         message="Senha enviada para o email!"
         icon={require('../../assets/success-icon.png')}
       />
+
     </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
+  
+  container: {
+    flex:1,
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+  },
   scrollContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  container: {
-    width: '100%',
-    backgroundColor: '#FFFFFF',
-  },
+
   logoContainer: {
     alignItems: 'center',
     backgroundColor: '#0F0147',
@@ -122,4 +125,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  
 });
