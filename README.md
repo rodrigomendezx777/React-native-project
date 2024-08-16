@@ -1,79 +1,87 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# AppTesteCross
 
-# Getting Started
+## Descrição
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**AppTesteCross** é uma aplicação React Native desenvolvida para fornecer uma interface de login, recuperação de senha e cadastro de usuários, com validações robustas e um design responsivo. A aplicação é projetada para ser usada em dispositivos móveis e oferece uma experiência de usuário fluida e intuitiva.
 
-## Step 1: Start the Metro Server
+## Funcionalidades Principais
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **Login:** Tela de login com validação de email e senha.
+- **Recuperação de Senha:** Permite que os usuários recuperem suas senhas por meio do envio de um email de recuperação.
+- **Cadastro de Usuário:** Tela de cadastro com validação de campos como nome, email, CPF/CNPJ, data de nascimento e aceitação dos termos de uso.
+- **Modal de Confirmação:** Modal que aparece após o envio do email de recuperação de senha, informando ao usuário que a senha foi enviada.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Estrutura do Projeto
 
-```bash
-# using npm
-npm start
+- **/assets:** Contém os arquivos de imagem usados na aplicação (ex.: logo, ícones).
+- **/components:** Componentes reutilizáveis da aplicação, como o Modal de Confirmação.
+- **/screens:** Telas principais da aplicação (LoginScreen, SignupScreen, ForgotPasswordScreen).
 
-# OR using Yarn
-yarn start
-```
+## Validações Implementadas
 
-## Step 2: Start your Application
+- **Email:** Verifica se o email está em um formato válido.
+- **Senha:** Verifica se a senha possui ao menos 6 caracteres.
+- **CPF/CNPJ:** Valida o formato e a autenticidade do CPF/CNPJ inserido.
+- **Data de Nascimento:** Verifica se a data inserida está no formato correto e se o usuário tem mais de 18 anos.
+- **Termos de Uso:** Garante que o usuário aceite os termos antes de concluir o cadastro.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Como Executar
 
-### For Android
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/rodrigomendezx777/React-native-project.git
+   ```
 
-```bash
-# using npm
-npm run android
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd React-native-project
+   ```
 
-# OR using Yarn
-yarn android
-```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-### For iOS
+4. Execute o projeto:
+   ```bash
+   npx react-native run-android
+   ```
+   ou
+   ```bash
+   npx react-native run-ios
+   ```
 
-```bash
-# using npm
-npm run ios
+## Tecnologias Utilizadas
 
-# OR using Yarn
-yarn ios
-```
+- **React Native**
+- **JavaScript/TypeScript**
+- **React Navigation**
+- **CSS-in-JS (StyleSheet)**
+- **React Hooks**
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Contribuição
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Sinta-se à vontade para contribuir com melhorias e novas funcionalidades. Basta seguir os passos:
 
-## Step 3: Modifying your App
+1. Fork este repositório.
+2. Crie uma branch para sua feature:
+   ```bash
+   git checkout -b minha-nova-feature
+   ```
+3. Commit suas mudanças:
+   ```bash
+   git commit -m 'Adiciona nova funcionalidade'
+   ```
+4. Push para a branch:
+   ```bash
+   git push origin minha-nova-feature
+   ```
+5. Abra um Pull Request.
 
-Now that you have successfully run the app, let's modify it.
+## Licença
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+---
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este `README.md` destaca todos os pontos importantes da sua aplicação, como funcionalidades, estrutura do projeto, validações e como executar o projeto. Você pode personalizar ainda mais de acordo com as especificidades do seu projeto.
